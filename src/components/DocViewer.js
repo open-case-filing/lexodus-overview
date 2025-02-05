@@ -29,28 +29,36 @@ const DocViewer = () => {
   };
 
   return (
-    <div className="flex h-screen">
-      {/* Main content area */}
-      <div className="flex-1 p-8 overflow-y-auto">
-        <MainContent onTermClick={handleTermClick} />
+    <div className="fixed inset-0 flex overflow-hidden">
+      {/* Main content area with dynamic width */}
+      <div className={`flex-1 p-8 overflow-y-auto transition-all duration-300 ${
+        selectedTerm ? 'mr-96' : 'mr-0'
+      }`}>
+        <div className="max-w-5xl mx-auto">
+          <MainContent onTermClick={handleTermClick} />
+        </div>
       </div>
       
-      {/* Definition sidebar */}
-      <div className={`w-96 bg-gray-50 p-6 border-l transition-all duration-300 ${selectedTerm ? 'translate-x-0' : 'translate-x-full'}`}>
-        {selectedTerm && (
-          <div>
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-bold">{selectedTerm.title}</h3>
-              <button 
-                onClick={() => setSelectedTerm(null)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X size={20} />
-              </button>
+      {/* Fixed-position sidebar */}
+      <div className={`fixed top-0 right-0 w-96 h-full bg-gray-50 border-l transform transition-transform duration-300 ease-in-out ${
+        selectedTerm ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <div className="h-full overflow-y-auto p-6">
+          {selectedTerm && (
+            <div>
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-xl font-bold">{selectedTerm.title}</h3>
+                <button 
+                  onClick={() => setSelectedTerm(null)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              {formatDefinition(selectedTerm.definition)}
             </div>
-            {formatDefinition(selectedTerm.definition)}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
