@@ -1,0 +1,18 @@
+lexodus-overview/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   │   └── DocViewer.js
+│   ├── data/
+│   │   ├── glossary.js
+│   │   └── content.js
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+└── README.md
