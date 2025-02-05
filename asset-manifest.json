@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lexodus-overview/static/css/main.3c059182.css",
+    "main.js": "/lexodus-overview/static/js/main.c2a877c7.js",
+    "index.html": "/lexodus-overview/index.html",
+    "main.3c059182.css.map": "/lexodus-overview/static/css/main.3c059182.css.map",
+    "main.c2a877c7.js.map": "/lexodus-overview/static/js/main.c2a877c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c059182.css",
+    "static/js/main.c2a877c7.js"
+  ]
+}
