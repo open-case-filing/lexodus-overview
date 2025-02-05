@@ -10,6 +10,24 @@ const DocViewer = () => {
     setSelectedTerm(glossaryData[term]);
   };
 
+  const formatDefinition = (definition) => {
+    const [simple, technical] = definition.split('\n\nTechnical definition:');
+    const [simpleLabel, simpleText] = simple.split('In simple terms:');
+    
+    return (
+      <div className="space-y-6">
+        <div>
+          <h4 className="font-semibold text-gray-900 mb-2">In simple terms:</h4>
+          <p className="text-gray-700">{simpleText.trim()}</p>
+        </div>
+        <div>
+          <h4 className="font-semibold text-gray-900 mb-2">Technical definition:</h4>
+          <p className="text-gray-700">{technical.trim()}</p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="flex h-screen">
       {/* Main content area */}
@@ -21,7 +39,7 @@ const DocViewer = () => {
       <div className={`w-96 bg-gray-50 p-6 border-l transition-all duration-300 ${selectedTerm ? 'translate-x-0' : 'translate-x-full'}`}>
         {selectedTerm && (
           <div>
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-bold">{selectedTerm.title}</h3>
               <button 
                 onClick={() => setSelectedTerm(null)}
@@ -30,7 +48,7 @@ const DocViewer = () => {
                 <X size={20} />
               </button>
             </div>
-            <p className="text-gray-700">{selectedTerm.definition}</p>
+            {formatDefinition(selectedTerm.definition)}
           </div>
         )}
       </div>
