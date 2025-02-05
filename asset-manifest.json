@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/lexodus-overview/static/css/main.7cc82c82.css",
-    "main.js": "/lexodus-overview/static/js/main.9fc6e9b4.js",
+    "main.css": "/lexodus-overview/static/css/main.08deecb7.css",
+    "main.js": "/lexodus-overview/static/js/main.dbd36c51.js",
     "index.html": "/lexodus-overview/index.html",
-    "main.7cc82c82.css.map": "/lexodus-overview/static/css/main.7cc82c82.css.map",
-    "main.9fc6e9b4.js.map": "/lexodus-overview/static/js/main.9fc6e9b4.js.map"
+    "main.08deecb7.css.map": "/lexodus-overview/static/css/main.08deecb7.css.map",
+    "main.dbd36c51.js.map": "/lexodus-overview/static/js/main.dbd36c51.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cc82c82.css",
-    "static/js/main.9fc6e9b4.js"
+    "static/css/main.08deecb7.css",
+    "static/js/main.dbd36c51.js"
   ]
 }
